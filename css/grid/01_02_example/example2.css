@@ -1,0 +1,58 @@
+/* example2 grid */
+@media(orientation: portrait){
+    /* #grid{
+        display: grid;
+    } */
+
+    /* 
+        the rows, columns, and areas of the grid are defined visually using the 'grid-template-areas' property. Each string is a row, and each word and area. The number of works in a string determines the number of columns. Note the number of words in each string must be identical. 
+    */
+    .grid-container{
+        grid-template-areas: 
+            "title stats"
+            "score stats"
+            "board board"
+            "controls controls";
+
+            
+                /* 
+                    the way to size columns and rows can be assigned with the 'grid-template-columns' and 'grid-template-rows' properties.
+                */
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto 1fr auto;
+    }
+}
+
+@media(orientation: landscape){
+
+    .grid-container{
+        /* 
+            template property defines areas of the same name, but this time positioned differently to better suit a landscape orientation. 
+        */
+        grid-template-areas: 
+            "title board"
+            "stats board"
+            "score controls";
+        
+        grid-template-columns: auto 1fr; 
+        grid-template-rows: auto 1fr auto;
+        
+    }    
+}
+
+/* The 'grid-area' property places a grid item into a named area of the grid */
+#title{ grid-area: title;}
+#score{ grid-area: score;}
+#stats{ grid-area: stats;}
+#board{ grid-area: board;}
+#controls{ grid-area: controls;}
+
+
+
+
+
+
+
+
+
+

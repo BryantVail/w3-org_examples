@@ -1,0 +1,45 @@
+*{
+    border: gray 1px solid;
+}
+form{
+    display: grid;
+    /* 
+        define 3 columns
+            all content-sized
+            name corresponding lines
+    */
+    grid-template-columns: 
+        [labels] auto 
+        [controls] auto 
+        [oversized] auto;
+    grid-auto-flow: row dense;
+}
+
+form > label{
+    /* place all labels in the 'labels' column
+    and automatically find the next available row */
+    grid-column: labels;
+    grid-row: auto;
+}
+
+form > input,
+form > select{
+    /* place all controls in the "controls" column and automatically find the next available row */
+    grid-column: controls;
+    grid-row: auto;
+}
+
+#department-block{
+    /* auto place this item in the 'oversized' column in the first row where an area that spans three rows won't overlap other explicitly placed items or areas or any itmes automatically placed prior to this area. */
+    grid-column: oversized;
+    grid-row: span 3;
+}
+
+/* place all the buttons of the form in the explicitly defined grid area */
+#buttons{
+    grid-row: auto;
+
+    /* ensure the button area spans the entire grid element in the row axis */
+    grid-column: 1 / -1;
+    text-align: end;
+}

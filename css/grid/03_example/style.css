@@ -1,0 +1,58 @@
+/* example3 */
+/* style.css */
+
+main{
+    /* grid with 4 names areas [H,A,B,F]
+    first column: sized to fit its contents (auto)
+    secondColumn: takes up remaining space(1fr)
+    ROWS: 
+        default: auto (contents based)
+        lastRow: fixed size of 30px */
+    grid: 
+        "H H"
+        "A B"
+        "F F"
+        30px / auto 1fr;
+}
+
+main{
+    /* grid with as many rows of >=5rem as will fit in the height of the grid container (100vh). 
+    grid has no explicit columns; columns are added as content is added
+        -result: column widths that are equalized(1fr)
+         */
+    grid: 
+        repeat(auto-fill, 5rem) 
+        / 
+        auto-flow 1fr;
+    height: 100vh;
+}
+
+@media print{
+    main{
+        grid: 
+            auto-flow 1fr 
+            / 
+            repeat(auto-fill, 5rem);
+    }   
+}
+
+main{
+    /* grid with 5 evenly-sized columns and 3 rows, 
+        middle-row: all remaining space
+            -at least enough to fit its contents */
+    grid: auto 1fr auto /repeat(5, 1fr);
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

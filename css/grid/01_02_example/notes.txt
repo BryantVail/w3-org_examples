@@ -1,0 +1,2 @@
+Example1: 
+    layout the grid & assign elements to part of the grid that's been defined
