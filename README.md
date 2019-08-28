@@ -1,2 +1,2 @@
-# w3-org_examples
- w3.org; examples from the definition
+# W3-org_examples
+ W3-org_examples
